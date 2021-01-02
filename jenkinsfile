@@ -1,0 +1,13 @@
+properties([pipelineTriggers([githubPush()])])
+
+node {
+    stage ('Checkout'){
+        git branch: 'main', url: 'https://github.com/md-pt/go-test.git'
+    }
+    stage ('Build'){
+         steps{echo 'Hello World'}
+    }
+    stage ('Test'){
+         steps{echo 'Hello World'}
+    }
+}    
