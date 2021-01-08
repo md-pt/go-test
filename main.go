@@ -10,3 +10,5 @@ func main() {
 	x := Hello()
 	fmt.Println(x)
 }
+
+//HELLO

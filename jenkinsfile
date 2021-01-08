@@ -1,13 +1,12 @@
-properties([pipelineTriggers([githubPush()])])
-
-node {
-    stage ('Checkout'){
-        git branch: 'main', url: 'https://github.com/md-pt/go-test.git'
+pipeline {
+    agent {
+        docker { image 'node:14-alpine' }
     }
-    stage ('Build'){
-         steps{echo 'Hello World'}
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
     }
-    stage ('Test'){
-         steps{echo 'Hello World'}
-    }
-}    
+}
